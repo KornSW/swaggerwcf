@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
 using Newtonsoft.Json;
 
@@ -22,7 +22,7 @@ namespace SwaggerWcf.Models
 
         public List<DefinitionProperty> Properties { get; set; }
 
-        public List<int> Enum { get; set; }
+        public List<long> Enum { get; set; }
 
         public void Serialize(JsonWriter writer)
         {

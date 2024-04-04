@@ -1,4 +1,4 @@
-﻿namespace SwaggerWcf.Models
+namespace SwaggerWcf.Models
 {
     internal enum InType
     {

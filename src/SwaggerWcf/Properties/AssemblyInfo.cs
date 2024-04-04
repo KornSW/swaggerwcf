@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Reflection;
 using System.Runtime.InteropServices;
 
@@ -20,6 +20,6 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 [assembly: Guid("d2eeaa63-60e5-4fda-8b62-e05dc8be8b5f")]
 
-[assembly: AssemblyVersion("1.3.0.*")]
-[assembly: AssemblyInformationalVersion("1.3.0-localbuild")]
+[assembly: AssemblyVersion("1.3.1.*")]
+[assembly: AssemblyInformationalVersion("1.3.1-localbuild")]
 //DONT ADD: [assembly: AssemblyFileVersion] !!!

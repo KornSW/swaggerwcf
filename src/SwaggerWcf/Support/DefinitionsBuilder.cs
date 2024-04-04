@@ -1,4 +1,5 @@
-﻿using System;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -67,7 +68,7 @@ namespace SwaggerWcf.Support
 
             if (schema.TypeFormat.Type == ParameterType.Integer && schema.TypeFormat.Format == "enum")
             {
-                schema.Enum = new List<int>();
+                schema.Enum = new List<long>();
 
                 Type propType = definitionType;
 
@@ -139,6 +140,14 @@ namespace SwaggerWcf.Support
             Type iface = (from i in type.GetInterfaces()
                           where i.IsGenericType && i.GetGenericTypeDefinition() == typeof(IEnumerable<>)
                           select i).FirstOrDefault();
+            
+            if (iface == null)
+            {
+                if (type == typeof(IEnumerable) || type.GetInterfaces().Any(i => i == typeof(IEnumerable)))
+                {
+                    return typeof(object);
+                }
+            }
 
             return iface == null ? null : GetEnumerableType(iface);
         }
@@ -215,14 +224,14 @@ namespace SwaggerWcf.Support
             ApplyIfValid(LastValidValue(attrs, a => a._MultipleOf), x => prop.MultipleOf = x.Value);
         }
         
-        public static int GetEnumMemberValue(Type enumType, string enumName)
+        public static long GetEnumMemberValue(Type enumType, string enumName)
         {
             if (string.IsNullOrWhiteSpace(enumName))
                 return 0;
             var enumVal = Enum.Parse(enumType, enumName, true);
             var underlyingType = Enum.GetUnderlyingType(enumType);
             var val = Convert.ChangeType(enumVal, underlyingType);
-            return Convert.ToInt32(val);
+            return Convert.ToInt64(val);
         }
 
         public static string GetEnumDescription(Enum value)

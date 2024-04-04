@@ -1,4 +1,4 @@
-﻿using System.ServiceModel.Activation;
+using System.ServiceModel.Activation;
 using SwaggerWcf.Support;
 
 namespace SwaggerWcf

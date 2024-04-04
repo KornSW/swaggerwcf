@@ -1,4 +1,4 @@
-﻿using SwaggerWcf.Attributes;
+using SwaggerWcf.Attributes;
 using SwaggerWcf.Models;
 using System;
 using System.Linq;

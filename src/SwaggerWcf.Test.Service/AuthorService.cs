@@ -1,4 +1,4 @@
-﻿using SwaggerWcf.Attributes;
+using SwaggerWcf.Attributes;
 using SwaggerWcf.Test.Service.Data;
 using System;
 using System.Collections.Generic;

@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
 using Newtonsoft.Json;
 
@@ -53,7 +53,7 @@ namespace SwaggerWcf.Models
 
         public bool UniqueItems { get; set; }
 
-        public List<int> Enum { get; set; }
+        public List<long> Enum { get; set; }
 
         public decimal MultipleOf { get; set; }
 
